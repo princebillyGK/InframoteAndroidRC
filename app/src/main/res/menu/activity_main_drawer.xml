@@ -11,10 +11,10 @@
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/about_symbol"
-            android:title="@string/menu_opt_about" />
+            android:title="@string/about_view_title" />
         <item
             android:id="@+id/nav_contact"
             android:icon="@drawable/contact_symbol"
-            android:title="@string/menu_opt_contact" />
+            android:title="@string/contact_view_title" />
     </group>
 </menu>

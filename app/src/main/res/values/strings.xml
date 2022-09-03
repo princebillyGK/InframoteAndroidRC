@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">InframoteAndroidRC</string>
+    <string name="app_name">Inframote RC</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Inframote</string>
@@ -8,7 +8,20 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_opt_dashboard">Dashboard</string>
-    <string name="menu_opt_about">About</string>
-    <string name="menu_opt_contact">Contact Us</string>
+    <string name="about_view_title">About Us</string>
+    <string name="contact_view_title">Contact Us</string>
     <string name="btn_new_remote_desc">Add New Remote</string>
+    <string name="about_description_content"><b>InfraMote</b> is an Android app that lets you use your phone as an all-in-one IR remote to control your TV, fan, light, air conditioner, or pretty much any other electrical item that requires an <b>IR-based remote.</b></string>
+    <string name="contact_us_view_title">Contact Us</string>
+    <string name="contact_title_1">Prince Billy Graham Karmoker</string>
+    <string name="contact_us_information_1">
+        <b>Mobile:</b> 01813038237\n
+        <b>Email:</b> princebillygk@gmail.com\n
+        <b>Website:</b> princebillygk.github.io\n
+    </string>
+    <string name="contact_title_2">Ahesanul Karim Abid</string>
+    <string name="contact_us_information_2">
+        <b>Mobile:</b> 01521112106\n
+        <b>Email:</b> ahesanulkarimabid@gmail.com\n
+    </string>
 </resources>
