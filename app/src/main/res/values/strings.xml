@@ -24,4 +24,23 @@
         <b>Mobile:</b> 01521112106\n
         <b>Email:</b> ahesanulkarimabid@gmail.com\n
     </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ir_address_input_hint">Address</string>
+    <string name="ir_command_input_hint">Command</string>
+    <string name="address_input_title">Address</string>
+    <string name="protocol_input_title">Protocol</string>
+    <string name="command_input_title">Command</string>
+    <string name="submit_btn_text">Add</string>
+    <string name="submit_button_text">Add</string>
+    <string name="protocol_field_title">Protocon</string>
+    <string name="name_field_title">Nane</string>
+    <string name="add_button_text">Add Buttnn</string>
+    <string name="addres_field_name">Address</string>
+    <string name="command_field_name">command</string>
+
+    <string-array name="ir_protocols">
+        <item>NEC</item>
+        <item>Sony</item>
+    </string-array>
 </resources>
