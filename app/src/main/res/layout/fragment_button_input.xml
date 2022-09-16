@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="16dp"
     tools:context=".ui.input.ButtonInputFragment">
 
 
@@ -30,12 +27,12 @@
                 android:text="@string/name_field_title" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/editName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:ems="10"
-                android:hint="Enter Name"
+                android:hint="@string/edit_name_hint"
                 android:inputType="textPersonName" />
 
         </LinearLayout>
@@ -74,7 +71,7 @@
                 android:text="@string/command_field_name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName3"
+                android:id="@+id/editCommand"
                 android:layout_width="123dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -98,13 +95,12 @@
                 android:text="@string/addres_field_name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/editAddress"
                 android:layout_width="144dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:ems="10"
-                android:hint="@string/addres_field_name"
-                android:inputType="textPersonName" />
+                android:hint="@string/addres_field_name" />
 
         </LinearLayout>
 
@@ -120,4 +116,4 @@
     </LinearLayout>
 
 
-</FrameLayout>
+</layout>
