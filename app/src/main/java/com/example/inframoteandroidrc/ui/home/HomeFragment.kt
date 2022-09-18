@@ -1,9 +1,12 @@
 package com.example.inframoteandroidrc.ui.home
 
+import android.content.Context
+import android.hardware.ConsumerIrManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -16,10 +19,9 @@ import com.example.inframoteandroidrc.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-    lateinit var homeViewModel: HomeViewModel
+    private lateinit var homeViewModel: HomeViewModel
 
-//    val manager =
-//        requireContext().getSystemService(Context.CONSUMER_IR_SERVICE) as ConsumerIrManager
+    private lateinit var irManager: ConsumerIrManager
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,16 +32,34 @@ class HomeFragment : Fragment() {
             inflater, R.layout.fragment_home, container, false
         )
 
+        try {
+            irManager =
+                requireContext().getSystemService(Context.CONSUMER_IR_SERVICE) as ConsumerIrManager
+            if (irManager.hasIrEmitter()) {
+                Toast.makeText(requireContext(), "This device have IR Blaster", Toast.LENGTH_SHORT)
+                    .show()
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "This device doesn't have any IR blaster",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        } catch (err: Exception) {
+            Toast.makeText(requireContext(), err.message, Toast.LENGTH_LONG).show()
+
+        }
+
         val application = requireNotNull(this.activity).application
 
         val dataSource = RemoteDatabase.getInstance(application).remoteButtonDao
         val viewModelFactory = HomeViewModelFactory(dataSource, application)
         homeViewModel = ViewModelProvider(
             this, viewModelFactory
-        ).get(HomeViewModel::class.java)
+        )[HomeViewModel::class.java]
 
 
-        val adapter = RemoteButtonAdapter { handleDelete(it) }
+        val adapter = RemoteButtonAdapter({ handleDelete(it) }, { handleSendAction() })
         homeViewModel.buttons.observe(viewLifecycleOwner) {
             adapter.update(it)
         }
@@ -52,8 +72,19 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    fun handleDelete(button: RemoteButton) {
+    private fun handleDelete(button: RemoteButton) {
         homeViewModel.delete(button)
+        Toast.makeText(requireContext(), "Button Deleted", Toast.LENGTH_SHORT).show()
     }
+
+    private fun handleSendAction() {
+        try {
+            irManager.transmit(57437537, intArrayOf(1000000, 1000000))
+            Toast.makeText(requireContext(), "IR command send", Toast.LENGTH_SHORT).show()
+        } catch (err: Exception) {
+            Toast.makeText(requireContext(), err.message, Toast.LENGTH_LONG).show()
+        }
+    }
+
 }
 

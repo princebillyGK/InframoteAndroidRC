@@ -1,6 +1,5 @@
 package com.example.inframoteandroidrc
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Button
@@ -11,7 +10,10 @@ import com.example.inframoteandroidrc.database.RemoteButton
 
 class ButtonCardViewHolder(val buttonCardView: CardView) : RecyclerView.ViewHolder(buttonCardView)
 
-class RemoteButtonAdapter(val deleteHandler: (buttoncard: RemoteButton) -> Unit) :
+class RemoteButtonAdapter(
+    val deleteHandler: (buttoncard: RemoteButton) -> Unit,
+    val sendHandler: () -> Unit
+) :
     RecyclerView.Adapter<ButtonCardViewHolder>() {
     var data = listOf<RemoteButton>()
 
@@ -34,7 +36,7 @@ class RemoteButtonAdapter(val deleteHandler: (buttoncard: RemoteButton) -> Unit)
         holder.buttonCardView.findViewById<TextView>(R.id.textCommandValue).text = item.command
         holder.buttonCardView.findViewById<TextView>(R.id.textProtocolValue).text = item.protocol
         holder.buttonCardView.findViewById<Button>(R.id.sendButton).setOnClickListener {
-            Log.d("InframoteRC", "Button Clicked")
+            sendHandler()
         }
         holder.buttonCardView.findViewById<Button>(R.id.deleteButton).setOnClickListener {
             deleteHandler(item)
