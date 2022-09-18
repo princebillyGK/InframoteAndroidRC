@@ -92,7 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="@string/addres_field_name" />
+                android:text="@string/address_field_name" />
 
             <EditText
                 android:id="@+id/editAddress"
@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:ems="10"
-                android:hint="@string/addres_field_name" />
+                android:hint="@string/address_field_name" />
 
         </LinearLayout>
 

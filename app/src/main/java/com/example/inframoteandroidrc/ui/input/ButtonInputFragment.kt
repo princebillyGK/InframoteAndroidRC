@@ -67,7 +67,7 @@ class ButtonInputFragment : Fragment() {
                         RemoteButton(
                             name = binding.editName.text.toString(),
                             address = binding.editAddress.text.toString(),
-                            protocol = binding.protocolSelector.toString(),
+                            protocol = binding.protocolSelector.selectedItem.toString(),
                             command = binding.editCommand.text.toString()
                         )
                     )

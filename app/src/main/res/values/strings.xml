@@ -34,9 +34,11 @@
     <string name="submit_btn_text">Add</string>
     <string name="submit_button_text">Add</string>
     <string name="protocol_field_title">Protocol</string>
-    <string name="name_field_title">Nane</string>
-    <string name="add_button_text">Add Buttnn</string>
-    <string name="addres_field_name">Address</string>
+    <string name="name_field_title">Name</string>
+    <string name="add_button_text">Add Button</string>
+    <string name="send_button_text">Send</string>
+    <string name="delete_button_text">Delete</string>
+    <string name="address_field_name">Address</string>
     <string name="command_field_name">command</string>
     <string name="edit_name_hint">Enter Name</string>
 
