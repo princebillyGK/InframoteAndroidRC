@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.inframoteandroidrc.IrUtility.IrCommand
 import com.example.inframoteandroidrc.R
 import com.example.inframoteandroidrc.RemoteButtonAdapter
 import com.example.inframoteandroidrc.database.RemoteButton
@@ -78,9 +79,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun handleSendAction() {
-        Ir
         try {
-            irManager.transmit(57437537, intArrayOf(1000000, 1000000))
+//            irManager.transmit(57437537, intArrayOf(1000000, 1000000))
+            val command = IrCommand.NEC.buildNEC(32, 0x723F)
+            irManager.transmit(command.frequency, command.pattern)
             Toast.makeText(requireContext(), "IR command send", Toast.LENGTH_SHORT).show()
         } catch (err: Exception) {
             Toast.makeText(requireContext(), err.message, Toast.LENGTH_LONG).show()
