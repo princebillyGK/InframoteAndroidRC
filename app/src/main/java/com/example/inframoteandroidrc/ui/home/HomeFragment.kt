@@ -78,6 +78,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun handleSendAction() {
+        Ir
         try {
             irManager.transmit(57437537, intArrayOf(1000000, 1000000))
             Toast.makeText(requireContext(), "IR command send", Toast.LENGTH_SHORT).show()
