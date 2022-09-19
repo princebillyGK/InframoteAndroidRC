@@ -81,7 +81,7 @@ class HomeFragment : Fragment() {
     private fun handleSendAction() {
         try {
 //            irManager.transmit(57437537, intArrayOf(1000000, 1000000))
-            val command = IrCommand.NEC.buildNEC(32, 0x723F)
+            val command = IrCommand.NEC.buildNEC(0x12, 0x1C)
             irManager.transmit(command.frequency, command.pattern)
             Toast.makeText(requireContext(), "IR command send", Toast.LENGTH_SHORT).show()
         } catch (err: Exception) {
